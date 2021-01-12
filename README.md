@@ -1,2 +1,2 @@
 # calendar
-Calendar on the terminal
+Calendar on the linux terminal
