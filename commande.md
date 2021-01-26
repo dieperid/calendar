@@ -124,8 +124,8 @@ La boucle do... while est différente de la boucle while car, la boucle do... wh
 > Dans ce cas de figure, la boucle se répète tant que la condition demandée n'est pas obtenue.
 ```c
 do {
-	printf("Salut les zeros !\n");
-	compteur++;
+  printf("Salut les zeros !\n");
+  compteur++;
 } while (compteur < 10);
 ```  				
 ##	5.3 for :
@@ -134,7 +134,7 @@ La boucle for est une boucle while écrite d'une autre manière.
 > Dans ce cas de figure, la boucle for répète 10 fois la phrase demandée.
 ```c
 for (compteur = 0 ; compteur < 10 ; compteur++) {
-	printf("Salut les Zeros!\n");
+  printf("Salut les Zeros!\n");
 }
 ```
 
