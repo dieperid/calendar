@@ -1422,9 +1422,9 @@ int nombre = 18;
 ```
 Et que **sizeof(int)** indique 4 octets sur notre ordinateur, alors la variable occupera 4 octets en mémoire !
 
-Supposons que la variable **nombre** soit allouée à l'adresse 1600 en mémoire. On peut donc dire que notre variable **nombre** de type **int** qui vaut 18,  
-occupe 4 octets dans le mémoire. Elle commence à l'adresse 1600 et termine à l'adresse 1603. La prochaine variable ne pourra donc être stockée qu'à partir  
-de l'adresse 1604 !  
+Supposons que la variable **nombre** soit allouée à l'adresse 1600 en mémoire. On peut donc dire que notre variable **nombre** de type **int** qui  
+vaut 18, occupe 4 octets dans le mémoire. Elle commence à l'adresse 1600 et termine à l'adresse 1603. La prochaine variable ne pourra donc être  
+stockée qu'à partir de l'adresse 1604 !  
 Si on avait fait la même chose avec un **char**, on aurait alors occupé qu'un seul octet en mémoire.  
 
 Imaginons maintenant un tableau de **int**. Chaque "case" du tableau occupera 4 octets.  
@@ -1432,8 +1432,9 @@ Si notre tableau fait 100 cases :
 ```c
 int tableau[100];
 ```
-On occupera alors en réalité 4 * 100 = 400 octets en mémoire. Même si le tableau est vide, il prend 400 octets ! La place en mémoire est réservée, aucun  
-autre programme n'a le droit d'y toucher (à part la votre). Une fois qu'une variable est déclarée elle prend immédiatement de la place en mémoire.
+On occupera alors en réalité 4 * 100 = 400 octets en mémoire. Même si le tableau est vide, il prend 400 octets ! La place en mémoire est réservée,  
+aucun autre programme n'a le droit d'y toucher (à part la votre). Une fois qu'une variable est déclarée elle prend immédiatement de la place  
+en mémoire.
 
 Notez que si on crée un tableau de type **Coordonnees** :
 ```c
@@ -1442,8 +1443,8 @@ Coordonnees tableau[100];
 On utilisera cette fois : 8 * 100 = 800 octets en mémoire.
 
 ## 16.2 Allocation de mémoire dynamique
-Pour allouer de la mémoire dynamiquement, on va avoir besoin d'inclurela bibliothèque **<stdlib.h>**. Cette bibliothèque contient deux fonctions dont nous allons  
-avoir besoin :
+Pour allouer de la mémoire dynamiquement, on va avoir besoin d'inclurela bibliothèque **<stdlib.h>**. Cette bibliothèque contient deux fonctions  
+dont nous allons avoir besoin :
 - malloc ("Memory ALLOCation"), c'est-à-dire ("Allocation de mémoire") :  
 demande au système d'exploitation la permission d'utiliser de la mémoire;
 - free ("Libérer") : permet d'indiquer à l'OS que l'on a plus besoin de la  
