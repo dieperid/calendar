@@ -522,7 +522,7 @@ de préprocesseur ne sont pas stocké quelque part dans la RAM.
 
 int main(int argc, char *argv[])
 {
-	int vies = NOMBRE_VIES_INITIALES;
+  int vies = NOMBRE_VIES_INITIALES;
 }
 ```
 > Voici le code après le passage du préprocesseur :
@@ -531,7 +531,7 @@ int main(int argc, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	int vies = 3;
+  int vies = 3;
 }
 ```
 ##	13.3 Les constantes prédéfinies
@@ -541,9 +541,9 @@ Chacune des constantes commence et se termine par deu symboles underscore "_" !
 ```c
 int main(int argc, char *argv[])
 {
-	printf("Erreur a la ligne %d du fichier %s\n", __LINE__, __FILE__);
-	printf("Ce fichier a ete compile le %s a %s\n", __DATE__, __TIME__);
-	return 0;
+  printf("Erreur a la ligne %d du fichier %s\n", __LINE__, __FILE__);
+  printf("Ce fichier a ete compile le %s a %s\n", __DATE__, __TIME__);
+  return 0;
 }
 ```
 ###		Il existe 4 constantes prédéfinie :
@@ -570,9 +570,9 @@ Vous pouvez voir que après le mot-clé ici c'est COUCOU(), il y'a des parenthè
 
 int main(int argc, char *argv[])
 {
-	COUCOU()
+  COUCOU()
 
-	return 0;
+  return 0;
 }
 ```			
 > Voici un deuxième exemple :
@@ -584,9 +584,9 @@ printf("J'aime la glisse\n");
 
 int main(int argc, char *argv[])
 {
-	RACONTER_SA_VIE()
+  RACONTER_SA_VIE()
 
-	return 0;
+  return 0;
 }
 ```
 Dans le main, j'appelle ma macro pour qu'elle dise ce que j'ai défini en haut.
@@ -598,9 +598,9 @@ Dans le main, j'appelle ma macro pour qu'elle dise ce que j'ai défini en haut.
 
 int main(int argc, char *argv[])
 {
-	MAJEUR(22)
+  MAJEUR(22)
 
-	return 0;
+  return 0;
 }
 ```			
 On met les paramètres à notre macro en haut, si le nombre dans MAJEUR est supérieur ou égal à 18, la personne est majeur.
@@ -1078,7 +1078,7 @@ int main(int argc, char *argv[])
     {
       caractereActuel = fgetc(fichier); // On lit le caractère
       printf("%c", caractereActuel); // On l'affiche
-	} while (caractereActuel != EOF); // On contine tant que fgetc n'a pas retourner EOF (fin de fichier)
+    } while (caractereActuel != EOF); // On contine tant que fgetc n'a pas retourner EOF (fin de fichier)
 
     fclose(fichier);
   }
@@ -1142,10 +1142,10 @@ int main(int argc, char *argv[])
   {
     // On lit le fichier tant qu'on ne reçoit pas d'erreur (NULL)
     while (fgets(chaine, TAILLE_MAX, fichier) != NULL)
-		{
-			printf("%s", chaine); // On affiche la chaine qu'on vient de lire
-		}
-  fclose(fichier);
+    {
+      printf("%s", chaine); // On affiche la chaine qu'on vient de lire
+    }
+    fclose(fichier);
   }
   return 0;
 }
@@ -1179,7 +1179,7 @@ int main(int argc, char *argv[])
     fscanf(fichier, "%d %d %d", &score[0], &score[1], &score[2]);
     printf("Les meilleurs scores sont : %d %d %d", score[0], score[1], score[2]);
 
-  	fclose(fichier);
+    fclose(fichier);
   }
   return 0;
 }
