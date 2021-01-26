@@ -1156,7 +1156,7 @@ while (fgets(chaine, TAILLE_MAX, fichier) != NULL)
 ```					
 La ligne du while fait deux choses : elle lit une ligne dans le fichier et vérifie si fgets ne renvoie pas NULL. Elle peut donc se traduire comme cela : "Lire une ligne du fichier tant que nous ne sommes pas arrivés à la fin du fichier".
 				
-###	15.5.3 fscanf
+##	15.5.3 fscanf
 C'est le même principe que la fonction scanf, là encore. Cette fonction lit dans un fichier qui doit avoir été écrit d'une
 manière précise. Supposons que votre fichier contienne trois nombr séparés par un espace, qui sont par exemple les trois plus
 hauts scores obtenus à votre jeu : 15 20 30.  
