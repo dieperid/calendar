@@ -1353,14 +1353,11 @@ dont la taille n'est connue qu'à l'exécution de programme.
 ## 16.1 La taille des variables
 Selon le type de variable que vous demandez au programme de créer (char, int, double, float, ...), vous avez besoin de plus ou moins de mémoire.
 
-En effet, pour stocker un nombre compris entre -128 et 127 (un **char**), on a besoin que d'un octet en mémoire. C'est tout petit. En revanche, un **int**  
-occupe généralement 4 octets en mémoire. Quant au double, il occupe 8 octets.
+En effet, pour stocker un nombre compris entre -128 et 127 (un **char**), on a besoin que d'un octet en mémoire. C'est tout petit. En revanche, un **int** occupe généralement 4 octets en mémoire. Quant au double, il occupe 8 octets.
 
-Le problème est... que ce n'est pas toujours le cas. Cela dépend des machines : peut-être que chez vous un **int** occupe 8 octets, qui sait ?  Notre objectif ici  
-est de vérifier quelle taille occupe chacun des types sur votre ordinateur.
+Le problème est... que ce n'est pas toujours le cas. Cela dépend des machines : peut-être que chez vous un **int** occupe 8 octets, qui sait ?  Notre objectif ici est de vérifier quelle taille occupe chacun des types sur votre ordinateur.
 
-Il y'a un moyen très facile pour savoir cela : utiliser l'opérateur **sizeof()**. Contrairement aux apparences, ce n'est pas une fonction mais une fonctionnalité de base  
-du langage C. Vous devez juste indiquer entre parenthèse le type que vous voulez analyser.
+Il y'a un moyen très facile pour savoir cela : utiliser l'opérateur **sizeof()**. Contrairement aux apparences, ce n'est pas une fonction mais une fonctionnalité de base  du langage C. Vous devez juste indiquer entre parenthèse le type que vous voulez analyser.
 
 > Pour connaître la taille d'un int, on devra donc écrire :
 ```c
