@@ -1605,12 +1605,12 @@ int main(int argc, char *argv[])
     Quel age avez-vous ? 34  
     Vous avez 34 ans
 
-**ATTENTION : Comme memoireAllouee est un pointeur, on ne l'utilise pas de la même manière qu'une vraie variable. Pour obtenir la valeur de la variable il faut  
-placer une étoile devant : memoireAllouee (regardez le printf). Tandis que pour indiquer l'adresse, on a juste besoin d'écrire le nom du pointeur  
-memoireAllouee (regardez le scanf).**
+**ATTENTION : Comme memoireAllouee est un pointeur, on ne l'utilise pas de la même manière qu'une vraie variable. Pour obtenir la  
+valeur de la variable il faut placer une étoile devant : memoireAllouee (regardez le printf). Tandis que pour indiquer l'adresse,  
+on a juste besoin d'écrire le nom du pointeur memoireAllouee (regardez le scanf).**
 
-Revenons à notre code. On y a alloué dynamiquement une variable de type **int**. Au final, ce qu'on a écrit revient exactement au même que d'utiliser la méthode  
-"automatique" qu'on connaît bien maintenant :
+Revenons à notre code. On y a alloué dynamiquement une variable de type **int**. Au final, ce qu'on a écrit revient exactement au même que  
+d'utiliser la méthode "automatique" qu'on connaît bien maintenant :
 ```c
 int main(int argc, char *argv[])
 {
