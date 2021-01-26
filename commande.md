@@ -1460,8 +1460,8 @@ fait pas, on s'expose à des fuites de mémoire, c'est-à-dire que votre program
 final de prendre beaucoup de mémoire alors qu'il n'a en réalité plus besoin de tout cet  
 espace.
 
-Ces trois étapes sont les mêmes que pour les fichiers. C'est le même principe, on alloue, on vérifie si l'allocation a marché, on utilise la mémoire,  
-puis on libère quand on a fini de l'utiliser.
+Ces trois étapes sont les mêmes que pour les fichiers. C'est le même principe, on alloue, on vérifie si l'allocation a marché, on utilise la  
+mémoire, puis on libère quand on a fini de l'utiliser.
 
 ## 16.2.1 malloc
 Comme dit plus haut, la fonction **malloc** permet d'allouer de la mémoire.
@@ -1470,8 +1470,8 @@ Comme dit plus haut, la fonction **malloc** permet d'allouer de la mémoire.
 ```c
 void* malloc(size_t nombreOctetsNecessaires);
 ```
-La fonction prend un paramètre : le nombre à réserver. Ainsi, il suffira d'écrire **sizeof(int)** dans ce paramètre pour réserver suffisamment d'espace pour stocker  
-un int.
+La fonction prend un paramètre : le nombre à réserver. Ainsi, il suffira d'écrire **sizeof(int)** dans ce paramètre pour réserver suffisamment  
+d'espace pour stocker un int.
 
 Dans ce cas, la fonction renvoie un void* ! Cette fonction renvoie un valeur vide. En voyant cela, on se demande pourquoi la fonction retourne  
 un "pointeur sur vide". Mais il y'a une raison à cela. En fait cette fonction renvoie un pointeur indiquant l'adresse que l'OS a réservée pour  
@@ -1483,8 +1483,8 @@ Le problème ici, c'est que la fonction **malloc** ne sait pas quel type de vari
 Comme **malloc** ne sait pas quel type elle doit retourner, elle renvoie le type void*. Ce sera une pointeur sur *n'importe quel type*. On peut donc  
 dire que c'est un pointeur universel.
 
-Passons maintenant à la pratique. Si je veux m'amuser à créer manuellement une variable de type **int** en mémoire, je devrais indiquer à **malloc** que  
-j'ai besoin de **sizeof(int)** octets en mémoire. Je récupère le résultat du **malloc** dans un pointeur sur **int**.
+Passons maintenant à la pratique. Si je veux m'amuser à créer manuellement une variable de type **int** en mémoire, je devrais indiquer à  
+**malloc** que j'ai besoin de **sizeof(int)** octets en mémoire. Je récupère le résultat du **malloc** dans un pointeur sur **int**.
 ```c
 void* malloc(size_t nombreOctetsNecessaire);
 
