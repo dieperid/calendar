@@ -149,10 +149,10 @@ for (compteur = 0 ; compteur < 10 ; compteur++) {
 
 
 #	7. Les prototypes :
-    Les prototypes servent à annoncer à l'ordinateur que la fonctions existe, c'est une indication. Une fois que l'ordinateur à 
-    l'indication que la fonction existe, peut importe ou vous mettez votre fonction dans le code, l'ordinateur comprendra et pourra 
-    l'exécuter. De plus comme vous pourrez le constater, la fonction main ne possède pas de prototype. C'est la seule fonction qui 
-    n'en nécessite pas parce que l'ordinateur la connait.
+    Les prototypes servent à annoncer à l'ordinateur que la fonctions existe, c'est une indication. Une fois que l'ordinateur  
+    à l'indication que la fonction existe, peut importe ou vous mettez votre fonction dans le code, l'ordinateur comprendra  
+    et pourra l'exécuter. De plus comme vous pourrez le constater, la fonction main ne possède pas de prototype. C'est la  
+    seule fonction qui n'en nécessite pas parce que l'ordinateur la connait.
 	
 ##	7.1 Exemple sans prototype :
 Tout en haut de mon code je défini ma fonction sans prototype pour que mon programme puisse la lire et l'exécuter.
@@ -226,7 +226,7 @@ La commande #include demande d'insérer le contenu du fichiers dans notre fichie
   	Le linker (ou "éditeur de liens" en français) est un programme dont le rôle est d'assembler les fichiers binaires  
     "**.o**". Il les assembles en un seul gros fichier -> l'exécutable final !
 	
-**Cet ordre et l'ordre à respecter obligatoirement ! Sinon le programme ne fonctionnera pas.**
+**Cet ordre est l'ordre à respecter obligatoirement ! Sinon le programme ne fonctionnera pas.**
 
 
 
