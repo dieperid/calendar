@@ -1536,8 +1536,8 @@ int main(int argc, char *argv[])
   return 0;
 }
 ```
-Si le pointeur est différent de NULL, le programme peut continuer, sinon il faut afficher un message d'erreur ou même mettre fin au programme,  
-parce qu'il ne pourra pas continuer correctement s'il n'y a plus de place en mémoire.
+Si le pointeur est différent de NULL, le programme peut continuer, sinon il faut afficher un message d'erreur ou même mettre fin au  
+programme, parce qu'il ne pourra pas continuer correctement s'il n'y a plus de place en mémoire.
 
 ## 16.2.2 free
 Comme dit plus haut, la fonction **free** permet de libérer de la mémoire.
