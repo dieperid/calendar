@@ -1315,15 +1315,17 @@ int main(int argc, char *argv[])
 
 
 # 16. L'allocation dynamique
-    Toutes les variables que nous avons créées jusqu'ici étaient construites automatiquement par le compilateur du langage C. C'était la méthode.
-    Il existe cependant une façon plus manuelle de créer des variables que l'on appelle l'allocation dynamique.
+    Toutes les variables que nous avons créées jusqu'ici étaient construites automatiquement par le compilateur du langage C.  
+    C'était la méthode. Il existe cependant une façon plus manuelle de créer des variables que l'on appelle l'allocation  
+    dynamique.
 
-    Un des principaux intérêts de l'allocation dynamique est de permettre à un programme de réserver la place nécessaire au stockage d'un tableau
-    en mémoire dont il ne connaissait pas la taille avant la compilation. En effet, jusqu'ici, la taille de nos tableaux était fixée "en dur" dans
-    le code source. Après la lecture de ce chapitre, vous allez pouvoir créer des tableaux de façon bien plus flexible !
+    Un des principaux intérêts de l'allocation dynamique est de permettre à un programme de réserver la place nécessaire au  
+    stockage d'un tableau en mémoire dont il ne connaissait pas la taille avant la compilation. En effet, jusqu'ici, la taille  
+    de nos tableaux était fixée "en dur" dans le code source. Après la lecture de ce chapitre, vous allez pouvoir créer des  
+    tableaux de façon bien plus flexible !
 
-    Il est impératif de bien savoir manipuler les pointeurs pour pouvoir lire ce chapitre ! Si vous avez encore des doutes sur les pointeurs, je
-    vous recommande d'aller relire le chapitre correspondant avant de commencer.
+    Il est impératif de bien savoir manipuler les pointeurs pour pouvoir lire ce chapitre ! Si vous avez encore des doutes sur  
+    les pointeurs, je vous recommande d'aller relire le chapitre correspondant avant de commencer.
 
 Quand on déclare une variable, on dit qu'on **demande à allouer de la mémoire** :
 ```c
@@ -1602,9 +1604,9 @@ int main(int argc, char *argv[])
     Quel age avez-vous ? 34  
     Vous avez 34 ans
 
-**ATTENTION : Comme memoireAllouee est un pointeur, on ne l'utilise pas de la même manière qu'une vraie variable. Pour obtenir la valeur de la variable il faut**  
-**placer une étoile devant : memoireAllouee (regardez le printf). Tandis que pour indiquer l'adresse, on a juste besoin d'écrire le nom du pointeur**  
-**memoireAllouee (regardez le scanf).**
+**ATTENTION : Comme memoireAllouee est un pointeur, on ne l'utilise pas de la même manière qu'une vraie variable. Pour obtenir la valeur de la variable il faut  
+placer une étoile devant : memoireAllouee (regardez le printf). Tandis que pour indiquer l'adresse, on a juste besoin d'écrire le nom du pointeur  
+memoireAllouee (regardez le scanf).**
 
 Revenons à notre code. On y a alloué dynamiquement une variable de type **int**. Au final, ce qu'on a écrit revient exactement au même que d'utiliser la méthode  
 "automatique" qu'on connaît bien maintenant :
