@@ -1634,32 +1634,33 @@ Soit on le fait :
 - automatiquement : c'est le méthode que vous connaissez et qu'on a utilisé jusqu'ici;
 - manuellement (*dynamiquement*) : c'est la méthode qu'on vient de voir.
 
-Cette méthode est plus compliquée, mais pas inutile ! Nous sommes parfois obligés d'allouer manuellement de la mémoire, comme nous allons le voir maintenant.
+Cette méthode est plus compliquée, mais pas inutile ! Nous sommes parfois obligés d'allouer manuellement de la mémoire, comme nous allons  
+le voir maintenant.
 
 ## Allocation dynamique d'un tableau
-Pour l'instant on à utilisé l'allocation dynamique uniquement pour créer une petite variable. Or en général, on ne sert pas de l'allocation dynamique pour cela. On  
-utilise la méthode automatique qui est plus simple.  
+Pour l'instant on à utilisé l'allocation dynamique uniquement pour créer une petite variable. Or en général, on ne sert pas de l'allocation  
+dynamique pour cela. On utilise la méthode automatique qui est plus simple.  
 
 On utilise l'allocation dynamique lorsque on doit créer un tableau dont on ne connaît pas la taille.
 
-Imaginons par exemple un programme qui stocke l'âge de tous les amis de l'utilisateur dans un tableau. On pourrait créer un tableau de **int** pour stocker les âges,  
-comme ceci :
+Imaginons par exemple un programme qui stocke l'âge de tous les amis de l'utilisateur dans un tableau. On pourrait créer un tableau de **int**  
+pour stocker les âges, comme ceci :
 ```c
 int ageAmis[15];
 ```
 
 Mais dans ce cas, on ne sait pas si l'utilisateur a que 15 amis, il en a sûrement plus !  
-Voilà l'intêret de l'allocation dynamique : on va demander le nombre d'amis à l'utilisateur, puis on fera une allocation dynamique pour créer un tableau ayant  
-exactement la taille nécessaire (ni trop petit, ni trop grand). Si l'utilisateur a 15 amis, on créera un tableau de **15 int**, s'il en a 28 on créera un tableau  
-de **28 int**, etc.
+Voilà l'intêret de l'allocation dynamique : on va demander le nombre d'amis à l'utilisateur, puis on fera une allocation dynamique pour créer un  
+tableau ayant exactement la taille nécessaire (ni trop petit, ni trop grand). Si l'utilisateur a 15 amis, on créera un tableau de **15 int**, s'il  
+en a 28 on créera un tableau de **28 int**, etc.
 
 Il est interdit de créer un tableau en indiquand sa taille à l'aide d'une variable :
 ```c
 int amis[nombreAmis];
 ```
 
-L'avantage de l'allocation dynamique, c'est qu'elle nous permet de créer un tableau qui a exactement la taille de la variable **nombreAmis**, et cela grâce à un  
-code qui fonctionnera partout !
+L'avantage de l'allocation dynamique, c'est qu'elle nous permet de créer un tableau qui a exactement la taille de la variable **nombreAmis**, et  
+cela grâce à un code qui fonctionnera partout !
 
 On va demander au **malloc** de nous réserver **nombreAmis * sizeof(int)** octets en mémoire :
 ```c
