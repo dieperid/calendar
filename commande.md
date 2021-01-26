@@ -1158,8 +1158,8 @@ La ligne du while fait deux choses : elle lit une ligne dans le fichier et véri
 				
 ##	15.5.3 fscanf
 C'est le même principe que la fonction scanf, là encore. Cette fonction lit dans un fichier qui doit avoir été écrit d'une
-manière précise. Supposons que votre fichier contienne trois nombr séparés par un espace, qui sont par exemple les trois plus  
-hauts scores obtenus à votre jeu : 15 20 30.  
+manière précise. Supposons que votre fichier contienne trois nombr séparés par un espace, qui sont par exemple les trois plus hauts scores  
+obtenus à votre jeu : 15 20 30.  
 Je veux récupérer chacun de ces nombres dans une variable de type int. la fonction fscanf va me permettre de faire ça rapidement.
 				
 >	Voici le code :
