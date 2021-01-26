@@ -834,7 +834,8 @@ Dans ce cas la, le niveau de volume FAIBLE correspondra à 10% de volume, MOYEN 
 
 
 #	15. Les fichiers
-    En C on peut lire et écrire dans des fichers, ces fichiers seront écrits sur le disque dur de votre ordinateur. L'avantage est donc qu'il restent là, même si vous arrêtez le programme ou l'ordinateur.
+    En C on peut lire et écrire dans des fichers, ces fichiers seront écrits sur le disque dur de votre ordinateur.  
+    L'avantage est donc qu'il restent là, même si vous arrêtez le programme ou l'ordinateur.
 	
 ##	15.1 Ouvrir et fermer un fichier
 Pour ouvrir un fichier on appelle la fonction "fopen".  
