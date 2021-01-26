@@ -1367,8 +1367,8 @@ fonctionnalité de base du langage C. Vous devez juste indiquer entre parenthès
     sizeof(int)
 ```
 
-A la compilation, cela sera remplacé par un nombre : le nombre d'octets que prend **int** en mémoire. Chez moi **sizeof(int)** vaut 4, ce qui signifie que  
-**int** occupe 4 octets. Chez vous, c'est problablement la même valeur, mais ce n'est pas une règle.
+A la compilation, cela sera remplacé par un nombre : le nombre d'octets que prend **int** en mémoire. Chez moi **sizeof(int)** vaut 4, ce qui signifie  
+que **int** occupe 4 octets. Chez vous, c'est problablement la même valeur, mais ce n'est pas une règle.
 
 > Testez pour voir, en affichant la valeur à l'aide d'un **printf** par exemple :
 ```c
@@ -1413,8 +1413,8 @@ int main(int argc, char *argv[])
 Plus un structure contient de sous-variables, plus elle prend de mémoire. Terriblement logique, n'est ce pas ?
 
 ##  Une nouvelle façon de voir la mémoire
-Jusqu'ici les schémas de mémoire étaient encore assez imprécis. On va enfin pouvoir les rendre vraiment précis et corrects maintenant qu'on connaît  
-la taille de chacun des types de variables.
+Jusqu'ici les schémas de mémoire étaient encore assez imprécis. On va enfin pouvoir les rendre vraiment précis et corrects maintenant qu'on  
+connaît la taille de chacun des types de variables.
 
 > Si on déclare une variable de type **int** :
 ```c
@@ -1460,8 +1460,8 @@ fait pas, on s'expose à des fuites de mémoire, c'est-à-dire que votre program
 final de prendre beaucoup de mémoire alors qu'il n'a en réalité plus besoin de tout cet  
 espace.
 
-Ces trois étapes sont les mêmes que pour les fichiers. C'est le même principe, on alloue, on vérifie si l'allocation a marché, on utilise la mémoire, puis on  
-libère quand on a fini de l'utiliser.
+Ces trois étapes sont les mêmes que pour les fichiers. C'est le même principe, on alloue, on vérifie si l'allocation a marché, on utilise la mémoire,  
+puis on libère quand on a fini de l'utiliser.
 
 ## 16.2.1 malloc
 Comme dit plus haut, la fonction **malloc** permet d'allouer de la mémoire.
