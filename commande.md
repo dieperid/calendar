@@ -1356,8 +1356,8 @@ Selon le type de variable que vous demandez au programme de créer (char, int, d
 En effet, pour stocker un nombre compris entre -128 et 127 (un **char**), on a besoin que d'un octet en mémoire. C'est tout petit. En revanche, un  
 **int** occupe généralement 4 octets en mémoire. Quant au double, il occupe 8 octets.
 
-Le problème est... que ce n'est pas toujours le cas. Cela dépend des machines : peut-être que chez vous un **int** occupe 8 octets, qui sait ?  Notre  
-objectif ici est de vérifier quelle taille occupe chacun des types sur votre ordinateur.
+Le problème est... que ce n'est pas toujours le cas. Cela dépend des machines : peut-être que chez vous un **int** occupe 8 octets, qui sait ?  
+Notre objectif ici est de vérifier quelle taille occupe chacun des types sur votre ordinateur.
 
 Il y'a un moyen très facile pour savoir cela : utiliser l'opérateur **sizeof()**. Contrairement aux apparences, ce n'est pas une fonction mais une  
 fonctionnalité de base du langage C. Vous devez juste indiquer entre parenthèse le type que vous voulez analyser.
@@ -1413,8 +1413,8 @@ int main(int argc, char *argv[])
 Plus un structure contient de sous-variables, plus elle prend de mémoire. Terriblement logique, n'est ce pas ?
 
 ##  Une nouvelle façon de voir la mémoire
-Jusqu'ici les schémas de mémoire étaient encore assez imprécis. On va enfin pouvoir les rendre vraiment précis et corrects maintenant qu'on connaît la taille de  
-chacun des types de variables.
+Jusqu'ici les schémas de mémoire étaient encore assez imprécis. On va enfin pouvoir les rendre vraiment précis et corrects maintenant qu'on connaît  
+la taille de chacun des types de variables.
 
 > Si on déclare une variable de type **int** :
 ```c
@@ -1422,9 +1422,9 @@ int nombre = 18;
 ```
 Et que **sizeof(int)** indique 4 octets sur notre ordinateur, alors la variable occupera 4 octets en mémoire !
 
-Supposons que la variable **nombre** soit allouée à l'adresse 1600 en mémoire. On peut donc dire que notre variable **nombre** de type **int** qui vaut 18, occupe 4   
-octets dans le mémoire. Elle commence à l'adresse 1600 et termine à l'adresse 1603. La prochaine variable ne pourra donc être stockée qu'à partir de  
-l'adresse 1604 !  
+Supposons que la variable **nombre** soit allouée à l'adresse 1600 en mémoire. On peut donc dire que notre variable **nombre** de type **int** qui vaut 18,  
+occupe 4 octets dans le mémoire. Elle commence à l'adresse 1600 et termine à l'adresse 1603. La prochaine variable ne pourra donc être stockée qu'à partir  
+de l'adresse 1604 !  
 Si on avait fait la même chose avec un **char**, on aurait alors occupé qu'un seul octet en mémoire.  
 
 Imaginons maintenant un tableau de **int**. Chaque "case" du tableau occupera 4 octets.  
@@ -1432,8 +1432,8 @@ Si notre tableau fait 100 cases :
 ```c
 int tableau[100];
 ```
-On occupera alors en réalité 4 * 100 = 400 octets en mémoire. Même si le tableau est vide, il prend 400 octets ! La place en mémoire est réservée, aucun autre  
-programme n'a le droit d'y toucher (à part la votre). Une fois qu'une variable est déclarée elle prend immédiatement de la place en mémoire.
+On occupera alors en réalité 4 * 100 = 400 octets en mémoire. Même si le tableau est vide, il prend 400 octets ! La place en mémoire est réservée, aucun  
+autre programme n'a le droit d'y toucher (à part la votre). Une fois qu'une variable est déclarée elle prend immédiatement de la place en mémoire.
 
 Notez que si on crée un tableau de type **Coordonnees** :
 ```c
