@@ -91,11 +91,11 @@ Les ternaires -> des conditions condensées, c'est comme un if, else mais en con
 ```c
 if (majeur)
 {
-	age = 18;
+  age = 18;
 }
 else
 {
-	age = 17;
+  age = 17;
 }
 ```
 Cette condition en ternaire :  
@@ -149,10 +149,10 @@ for (compteur = 0 ; compteur < 10 ; compteur++) {
 
 
 #	7. Les prototypes :
-    Les prototypes servent à annoncer à l'ordinateur que la fonctions existe, c'est une indication. Une fois que l'ordinateur à l'indication
-    que la fonction existe, peut importe ou vous mettez votre fonction dans le code, l'ordinateur comprendra et pourra l'exécuter.
-    De plus comme vous pourrez le constater, la fonction main ne possède pas de prototype. C'est la seule fonction qui n'en nécessite pas
-    parce que l'ordinateur la connait.
+    Les prototypes servent à annoncer à l'ordinateur que la fonctions existe, c'est une indication. Une fois que l'ordinateur à 
+    l'indication que la fonction existe, peut importe ou vous mettez votre fonction dans le code, l'ordinateur comprendra et pourra 
+    l'exécuter. De plus comme vous pourrez le constater, la fonction main ne possède pas de prototype. C'est la seule fonction qui 
+    n'en nécessite pas parce que l'ordinateur la connait.
 	
 ##	7.1 Exemple sans prototype :
 Tout en haut de mon code je défini ma fonction sans prototype pour que mon programme puisse la lire et l'exécuter.
@@ -327,14 +327,14 @@ size_t strlen(const char* chaine);
 
 int main(int argc, char *argv[])
 {
-	char chaine[] = "Salut";
-	int longueurChaine = 0;
+  char chaine[] = "Salut";
+  int longueurChaine = 0;
 
-	// On récupère la longueur de la chaîne dans longueurChaine
-	longueurChaine = strlen(chaine);
+  // On récupère la longueur de la chaîne dans longueurChaine
+  longueurChaine = strlen(chaine);
 
-	// On affiche la longueur de la chaîne
-	printf("La chaine %s fait %d caractères de long\n", chaine, longueurChaine);
+  // On affiche la longueur de la chaîne
+  printf("La chaine %s fait %d caractères de long\n", chaine, longueurChaine);
 }
 ```
 
@@ -378,14 +378,14 @@ int main(int argc, char *argv[])
 /*
 On crée 2 chaînes. chaine1  doit être assez grande pour accueillir le contenu de chaine2 en plus, sinon rique de plantage.
 */
-	char chaine1[100] = "Salut ", chaine2[] = "Mateo21";
+  char chaine1[100] = "Salut ", chaine2[] = "Mateo21";
 
-	strcat(chaine1, chaine2); // On concatène chaine2 dans chaine1
+  strcat(chaine1, chaine2); // On concatène chaine2 dans chaine1
 
-	// Si tout s'est bien passé, chaine1 vaut "Salut Mateo21"
-	printf("chaine1 vaut : %s\n", chaine1);
-	// chaine2 n'a pas changé :
-	printf("chaine2 vaut toujours %s\n", chaine2);
+  // Si tout s'est bien passé, chaine1 vaut "Salut Mateo21"
+  printf("chaine1 vaut : %s\n", chaine1);
+  // chaine2 n'a pas changé :
+  printf("chaine2 vaut toujours %s\n", chaine2);
 }
 ```
 
@@ -398,16 +398,16 @@ int strcmp(const char* chaine1, const char* chaine2);
 
 int main(int argc, char *argv[])
 {
-	char chaine1[] = "Texte de test", chaine2[] = "Texte de test";
+  char chaine1[] = "Texte de test", chaine2[] = "Texte de test";
 
-	if (strcmp(chaine1, chaine2) == 0) // Si chaines identiques
-	{
-	  printf("Les chaines sont identiques\n");
-	}
-	else
-	{
-	  printf("Les chaines sont différentes\n");
-	}
+  if (strcmp(chaine1, chaine2) == 0) // Si chaines identiques
+  {
+    printf("Les chaines sont identiques\n");
+  }
+  else
+  {
+    printf("Les chaines sont différentes\n");
+  }
   return 0;
 }
 ```
@@ -421,14 +421,14 @@ char* strchr(const char* chaine, int caractereARechercher);
 
 int main(int argc, char *argv[])
 {
-	char chaine[] ="Texte de test", *suiteChaine = NULL;
+  char chaine[] ="Texte de test", *suiteChaine = NULL;
 
-	suiteChaine = strchr(chaine, 'd');
+  suiteChaine = strchr(chaine, 'd');
 
-	if (suiteChaine != NULL) //Si on a trouvé quelque chose
-	{
-	  printf("Voici la fin de la chaine a partir du premier d : %s\n", suiteChaine);
-	}
+  if (suiteChaine != NULL) //Si on a trouvé quelque chose
+  {
+    printf("Voici la fin de la chaine a partir du premier d : %s\n", suiteChaine);
+  }
 }
 ```
 Il existe une variante de cette fonction c'est strrchr, elle pointe sur le dernier caractère qu'elle a trouvé.
@@ -442,15 +442,15 @@ char* strpbrk(const char* chaine, const char* lettreARechercher);
 
 int main(int argc, char *argv[])
 {
-	char *suiteChaine;
+  char *suiteChaine;
 
-	//On rechercher la première occurrence de x, d ou s dans "Texte de test"
-	suiteChaine = strpbrk("Texte de test","xds");
+  //On rechercher la première occurrence de x, d ou s dans "Texte de test"
+  suiteChaine = strpbrk("Texte de test","xds");
 
-	if (suiteChaine != NULL)
-	{
-	  printf("Voici la fin de la chaine a partir du premier des caracteres trouves : %s\n", suiteChaine);
-	}
+  if (suiteChaine != NULL)
+  {
+    printf("Voici la fin de la chaine a partir du premier des caracteres trouves : %s\n", suiteChaine);
+  }
 }
 ```
 Comme vous pouvez le constater on met **"xds"** pour rechercher les caractères dans une chaine. Les guillemets désignent une chaine.
@@ -465,14 +465,14 @@ char* strstr(const char* chaine, const char* chaineARechercher);
 
 int main(int argc, char *argv[])
 {
-	char *suiteChaine;
+  char *suiteChaine;
 
-	//On cherche la première occurrence de "test" dans "Texte de test" :
-	suiteChaine =strstr("Texte de test", "test");
-	if (suiteChaine != NULL)
-	{
-	  printf("Premiere occurrence de test dans Texte de test : %s\n", suiteChaine);
-	}
+  //On cherche la première occurrence de "test" dans "Texte de test" :
+  suiteChaine =strstr("Texte de test", "test");
+  if (suiteChaine != NULL)
+  {
+    printf("Premiere occurrence de test dans Texte de test : %s\n", suiteChaine);
+  }
 }
 ```
 
@@ -482,14 +482,14 @@ Cette fonction ressemble énormément au printf. Donc la fonction printf écrit 
 ```c
 int main(int argc, char *argv[])
 {
-	char chaine[100];
-	int age = 15;
+  char chaine[100];
+  int age = 15;
 
-	// On écrit "Tu as 15 ans" dans chaine
-	sprintf(chaine, "Tu as %d ans !\n", age);
+  // On écrit "Tu as 15 ans" dans chaine
+  sprintf(chaine, "Tu as %d ans !\n", age);
 
-	// On affiche chaine pour vérifier qu'elle contient bien cela
-	printf("%s", chaine);
+  // On affiche chaine pour vérifier qu'elle contient bien cela
+  printf("%s", chaine);
 }
 ```  
 Comme vous pouvez le constater, elle s'utilise de la même manière que le printf, mis à part le fait que vous devez lui donner en premier paramètre un pointeur vers la chaîne qui doit recevoir le texte.
