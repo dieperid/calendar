@@ -1364,7 +1364,7 @@ fonctionnalité de base du langage C. Vous devez juste indiquer entre parenthès
 
 > Pour connaître la taille d'un int, on devra donc écrire :
 ```c
-sizeof(int)
+    sizeof(int)
 ```
 
 A la compilation, cela sera remplacé par un nombre : le nombre d'octets que prend **int** en mémoire. Chez moi **sizeof(int)** vaut 4, ce qui signifie que  
