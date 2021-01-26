@@ -1573,9 +1573,9 @@ int main(int argc, char *argv[])
 ```
 
 ## Exemple concret d'utilisation
-On va programmer quelque chose qu'on a appris à faire il y'a un moment : demander l'âge de l'utilisateur et le lui afficher. La seule différence avec ce qu'on a faisait  
-avant, c'est qu'ici la variable va être allouée manuellement (on dit aussi *dynamiquement*) plutôt qu'automatiquement comme auparavant. Alors oui, du coup, le code  
-est un peu plus compliqué. Mais faites l'effort de bien comprendre, c'est important :
+On va programmer quelque chose qu'on a appris à faire il y'a un moment : demander l'âge de l'utilisateur et le lui afficher. La seule différence  
+avec ce qu'on a faisait avant, c'est qu'ici la variable va être allouée manuellement (on dit aussi *dynamiquement*) plutôt qu'automatiquement  
+comme auparavant. Alors oui, du coup, le code est un peu plus compliqué. Mais faites l'effort de bien comprendre, c'est important :
 ```c
 void* malloc(size_t nombreOctetsNecessaire);
 void free(void* pointeur);
