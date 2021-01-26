@@ -352,18 +352,18 @@ char* strcpy(char* copieDeLaChaine, const char* chaineACopier);
 
 int main(int argc, char *argv[])
 {
-/* 
-On crée une chaîne "chaine" qui contient un peu de texte et une copie (vide) de taille 100 pour être sur d'avoir la place pour copier. 
-*/
-char chaine[] = "texte", copie[100] = {0};
+  /* 
+  On crée une chaîne "chaine" qui contient un peu de texte et une copie (vide) de taille 100 pour être sur d'avoir la place pour copier. 
+  */
+  char chaine[] = "texte", copie[100] = {0};
 
-strcpy(copie, chaine); // On copie "chaine" dans "copie"
+  strcpy(copie, chaine); // On copie "chaine" dans "copie"
 
-// Si tout s'est bien passé, la copie devrait être identique à chaine
-printf("chaine vaut : %s\n", chaine);
-printf("copie vaut : %s\n", copie);
+  // Si tout s'est bien passé, la copie devrait être identique à chaine
+  printf("chaine vaut : %s\n", chaine);
+  printf("copie vaut : %s\n", copie);
 
-return 0;
+  return 0;
 }
 ```
 
