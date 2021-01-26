@@ -215,13 +215,16 @@ La commande #include demande d'insérer le contenu du fichiers dans notre fichie
 ##	La compilation est séparée en 3 parties :
 	
 ##	1. Le préprocesseur :
-	Le préprocesseur est un programme qui démarre avant la compilation. Son rôle est d'exécuter les instructions spéciales qu'on lui a données dans les directives de préprocesseur, ce sont ces fameuses lignes qui commencent par un **#**.
+	Le préprocesseur est un programme qui démarre avant la compilation. Son rôle est d'exécuter les instructions spéciales 
+  qu'on lui a données dans les directives de préprocesseur, ce sont ces fameuses lignes qui commencent par un **#**.
 		   
 ##	2. La compilation :
-	La compilation est l'étape qui consiste à transformer vos fichiers source en code binaire compréhensible par l'ordinateur.  Le compilateur compile chaque fichier "**.c**" un à un.
+	La compilation est l'étape qui consiste à transformer vos fichiers source en code binaire compréhensible par l'ordinateur.  
+  Le compilateur compile chaque fichier "**.c**" un à un.
 		   
 ##	3. Linker (Edition des liens) :
-	Le linker (ou "éditeur de liens" en français) est un programme dont le rôle est d'assembler les fichiers binaires "**.o**". Il les assembles en un seul gros fichier -> l'exécutable final !
+	Le linker (ou "éditeur de liens" en français) est un programme dont le rôle est d'assembler les fichiers binaires "**.o**".  
+  Il les assembles en un seul gros fichier -> l'exécutable final !
 	
 **Cet ordre et l'ordre à respecter obligatoirement ! Sinon le programme ne fonctionnera pas.**
 
