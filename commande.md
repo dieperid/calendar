@@ -1634,8 +1634,8 @@ Soit on le fait :
 - automatiquement : c'est le méthode que vous connaissez et qu'on a utilisé jusqu'ici;
 - manuellement (*dynamiquement*) : c'est la méthode qu'on vient de voir.
 
-Cette méthode est plus compliquée, mais pas inutile ! Nous sommes parfois obligés d'allouer manuellement de la mémoire, comme nous allons  
-le voir maintenant.
+Cette méthode est plus compliquée, mais pas inutile ! Nous sommes parfois obligés d'allouer manuellement de la mémoire, comme nous  
+allons le voir maintenant.
 
 ## Allocation dynamique d'un tableau
 Pour l'instant on à utilisé l'allocation dynamique uniquement pour créer une petite variable. Or en général, on ne sert pas de l'allocation  
