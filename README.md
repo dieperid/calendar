@@ -1,2 +1,2 @@
 # calendar
-Calendar on the linux terminal
+C program to show a calendar on the linux terminal
