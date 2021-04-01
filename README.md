@@ -9,12 +9,12 @@ Or you can take the file "calendar.c" and create the binary.
 
 ### How to create the binary file
 - You have to execute this command in your terminal :
-```c
+```shell
 gcc calendar.c -o fileName
 ```
 
 ### How to execute the program
 - You have to execute this command in your terminal :
-```c
+```shell
 ./fileName
 ```
