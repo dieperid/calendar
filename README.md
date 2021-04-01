@@ -1,5 +1,7 @@
 # calendar
-C program to show a calendar on the linux terminal
+C program to show a calendar on the linux terminal  
+    The "myNotes" file it's the documentation  that i taked when i was learning C.  
+    The file is in french.
 
 ## How to use it
 You need to have the file "calendar" it's the binary of the C file.  
