@@ -27,11 +27,11 @@
 ******************************************************************************/
 
 ///////////////////////////Déclaration des constantes/////////////////////////////
-const int INT_SIZE = 12; 																				// Constante pour la valeur du nombre de mois
+const int INT_SIZE = 12; // Constante pour la valeur du nombre de mois
 
 ///////////////////////////Déclaration des variables//////////////////////////////
 int tab_intJourMois[]={0,31,28,31,30,31,30,31,31,30,31,30,31}; 	// Tableau possédant le nombre de jours par mois
-char *tab_chrMois[]= 																						// Tableau possédant les mois de l'année
+char *tab_chrMois[]=                                            // Tableau possédant les mois de l'année
 {
 	" ",
 	"\n    Janvier",
@@ -50,11 +50,11 @@ char *tab_chrMois[]= 																						// Tableau possédant les mois de l'a
 
 /***********************************************************
 ** ----------------------- METHODE ---------------------- **
-** <Résume>																								**
+** <Résume>                                               **
 **	Cette méthode sert à demander l'année à l'utilisateur **
-** 	et la récupérer pour le programme.										**
-** <Résumé>																								**
-** <Paramètre> "void" <Paramètre>													**
+** 	et la récupérer pour le programme.                    **
+** <Résume>                                               **
+** <Paramètre> "void" <Paramètre>                         **
 ***********************************************************/
 int Annee(void)
 {
@@ -70,20 +70,20 @@ int Annee(void)
 
 /***********************************************************
 ** ----------------------- METHODE ---------------------- **
-** <Résume>																								**
-**	Cette méthode sert à demander le mois à l'utilisateur **
-** 	et le récupérer pour le programme.										**
-** <Résumé>																								**
-** <Paramètre> "void" <Paramètre>													**
+** <Résume>                                               **
+**  Cette méthode sert à demander le mois à l'utilisateur **
+**  et le récupérer pour le programme.                    **
+** <Résumé>                                               **
+** <Paramètre> "void" <Paramètre>                         **
 ***********************************************************/
 int choixMois(void)
 {
 	// Création de la variable intChoix et initialisation à 0
-  int intChoix = 0;
+	int intChoix = 0;
 
 	// Affichage des mois de l'année
-  printf("\n  Voici les mois de l'année\n");
-  printf("-----------------------------\n");
+	printf("\n  Voici les mois de l'année\n");
+	printf("-----------------------------\n");
 
 	printf(" 1. Janvier\n");
 	printf(" 2. Février\n");
@@ -99,27 +99,27 @@ int choixMois(void)
 	printf("12. Décembre\n");
 
 	// Demande à l'utilisateur
-  printf("\nVeuillez seléctionner un mois : ");
-  scanf("%d", &intChoix);
+	printf("\nVeuillez seléctionner un mois : ");
+	scanf("%d", &intChoix);
 
 	// On retourne la valeur de intChoix
-  return intChoix;
+	return intChoix;
 }
 
 /*************************************************************
 ** ------------------------ METHODE ----------------------- **
-** <Résume>																								  **
-**	Cette méthode est utilisée pour avoir le numéro du      **
-** 	premier jour de l'année et afficher la date à la			  **
-**	bonne position dans le calendrier.										  **
-** <Résumé>																								  **
-** <Paramètre> "intAnnee" <Paramètre>											  **
+** <Résume>                                                 **
+**  Cette méthode est utilisée pour avoir le numéro du      **
+**  premier jour de l'année et afficher la date à la        **
+**  bonne position dans le calendrier.                      **
+** <Résumé>                                                 **
+** <Paramètre> "intAnnee" <Paramètre>                       **
 *************************************************************/
 int determineCodeJour(int intAnnee)
 {
 	// Création est initialisation à des variables intCodeJour, intD1, intD2, intD3
 	int intCodeJour,intD1, intD2, intD3 = 0;
-	
+
 	// Incrémentation des variables avec les calculs
 	intD1 = (intAnnee - 1)/ 4;
 	intD2 = (intAnnee - 1)/ 100;
@@ -135,8 +135,8 @@ int determineCodeJour(int intAnnee)
 /***********************************************************
 ** ----------------------- METHODE ---------------------- **
 ** <Résume>																								**
-**	Cette méthode sert à determiner si c'est une année    **
-** 	bissextile.																						**
+**  Cette méthode sert à determiner si c'est une année    **
+**  bissextile.																						**
 ** <Résumé>																								**
 ** <Paramètre> "intAnnee" <Paramètre>											**
 ***********************************************************/
@@ -156,17 +156,17 @@ int determineCodeAnnee(int intAnnee)
 	}
 }
 
-/***********************************************************
-** ----------------------- METHODE ---------------------- **
-** <Résume>																								**
-**	Cette méthode sert à determiner si c'est une année    **
-** 	bissextile.																						**
-** <Résumé>																								**
-** <Paramètre> "intAnnee" 	 <Paramètre>									**
-** <Paramètre> "intCodeJour" <Paramètre>									**
-** <Paramètre> "intChoix" 	 <Paramètre>									**
-** <Paramètre> "intJour2" 	 <Paramètre>									**
-***********************************************************/
+/*********************************************************
+** ---------------------- METHODE --------------------- **
+** <Résume>                                             **
+**  Cette méthode sert à determiner si c'est une année  **
+**  bissextile.                                         **
+** <Résumé>                                             **
+** <Paramètre> "intAnnee"    <Paramètre>                **
+** <Paramètre> "intCodeJour" <Paramètre>                **
+** <Paramètre> "intChoix"    <Paramètre>                **
+** <Paramètre> "intJour2"    <Paramètre>                **
+*********************************************************/
 void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 {
 	// Création et initialisation à 0 des variables intMois, intJour et intBool
@@ -262,7 +262,7 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 						printf(" ");
 					}
 				}
-      	// Si le jour n'est pas avant samedi alors on commence à la prochaine ligne
+				// Si le jour n'est pas avant samedi alors on commence à la prochaine ligne
 				else
 				{
 					intBool = 1;
