@@ -51,8 +51,8 @@ char *tab_chrMois[]=                                            // Tableau poss�
 /***********************************************************
 ** ----------------------- METHODE ---------------------- **
 ** <Résume>                                               **
-**	Cette méthode sert à demander l'année à l'utilisateur **
-** 	et la récupérer pour le programme.                    **
+**  Cette méthode sert à demander l'année à l'utilisateur **
+**  et la récupérer pour le programme.                    **
 ** <Résume>                                               **
 ** <Paramètre> "void" <Paramètre>                         **
 ***********************************************************/
@@ -134,11 +134,11 @@ int determineCodeJour(int intAnnee)
 
 /***********************************************************
 ** ----------------------- METHODE ---------------------- **
-** <Résume>																								**
+** <Résume>                                               **
 **  Cette méthode sert à determiner si c'est une année    **
 **  bissextile.																						**
-** <Résumé>																								**
-** <Paramètre> "intAnnee" <Paramètre>											**
+** <Résumé>                                               **
+** <Paramètre> "intAnnee" <Paramètre>                     **
 ***********************************************************/
 int determineCodeAnnee(int intAnnee)
 {
@@ -270,18 +270,18 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 				}
 			}	
 		}
-			// On met la position pour le prochain mois
-			intCodeJour = (intCodeJour + tab_intJourMois[intMois]) % 7;
+		// On met la position pour le prochain mois
+		intCodeJour = (intCodeJour + tab_intJourMois[intMois]) % 7;
 	}
 }
 
 /***********************************************************
 ** ----------------------- METHODE ---------------------- **
-** <Résume>																								**
-**	Cette méthode est la méthode main, donc la méthode    **
-** 	principale pour le fonctionnement du programme.				**
-** <Résumé>																								**
-** <Paramètre> "void" <Paramètre>													**
+** <Résume>                                               **
+**  Cette méthode est la méthode main, donc la méthode    **
+**  principale pour le fonctionnement du programme.       **
+** <Résumé>                                               **
+** <Paramètre> "void" <Paramètre>                         **
 ***********************************************************/
 int main(void)
 {
