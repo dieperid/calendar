@@ -106,15 +106,15 @@ int choixMois(void)
   return intChoix;
 }
 
-/***********************************************************
-** ----------------------- METHODE ---------------------- **
-** <Résume>																								**
-**	Cette méthode est utilisée pour avoir le numéro du    **
-** 	premier jour de l'année et afficher la date à la			**
-**	bonne position dans le calendrier.										**
-** <Résumé>																								**
-** <Paramètre> "intAnnee" <Paramètre>											**
-***********************************************************/
+/*************************************************************
+** ------------------------ METHODE ----------------------- **
+** <Résume>																								  **
+**	Cette méthode est utilisée pour avoir le numéro du      **
+** 	premier jour de l'année et afficher la date à la			  **
+**	bonne position dans le calendrier.										  **
+** <Résumé>																								  **
+** <Paramètre> "intAnnee" <Paramètre>											  **
+*************************************************************/
 int determineCodeJour(int intAnnee)
 {
 	// Création est initialisation à des variables intCodeJour, intD1, intD2, intD3
