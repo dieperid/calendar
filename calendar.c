@@ -197,7 +197,9 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 				}
 				// Sinon :
 				else
+				{
 					printf(" ");
+				}
 			}
 		}
 		
@@ -325,7 +327,7 @@ int main(void)
 		// intAnnee prend la valeur retournée par la méthode Annee()
 		intAnnee = Annee();
 		// intChoix prend la valeur retournée par la méthode choixMois()
-  	intChoix = choixMois();
+		intChoix = choixMois();
 		// intCodeJour prend la valeur retournée par la méthode determineCodeJour(intAnnee)
 		intCodeJour = determineCodeJour(intAnnee);
 
