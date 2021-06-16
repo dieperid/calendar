@@ -190,16 +190,7 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 			// On corrige la position pour la première date du mois
 			for (intJour = 1; intJour <= 1 + intCodeJour * 3; intJour++)
 			{
-				// Si le booléan intBool vaut 0 alors :
-				if(intBool == 0)
-				{
-					printf(" ");
-				}
-				// Sinon :
-				else
-				{
-					printf(" ");
-				}
+				printf(" ");
 			}
 		}
 		
@@ -308,8 +299,10 @@ int main(void)
 		struct tm tm = *localtime(&t);
 		
 		// intAnnee prend la valeur de l'année actuelle
+		// tm_year renvoie le nombre d'année depuis 1900 donc on ajoute 1900 pour arriver à l'année actuelle
 		intAnnee = tm.tm_year + 1900;
 		// intChoix prend la valeur du mois actuel
+		// tm_mon renvoie les mois de 0 à 11 donc on fait + 1 pour le mois actuel
 		intChoix = tm.tm_mon + 1;
 		// intJour2 prend la valeur du jour actuel
 		intJour2 = tm.tm_mday;
