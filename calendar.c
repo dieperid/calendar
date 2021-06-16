@@ -136,7 +136,7 @@ int determineCodeJour(int intAnnee)
 ** ----------------------- METHODE ---------------------- **
 ** <Résume>                                               **
 **  Cette méthode sert à determiner si c'est une année    **
-**  bissextile.																						**
+**  bissextile.                                           **
 ** <Résumé>                                               **
 ** <Paramètre> "intAnnee" <Paramètre>                     **
 ***********************************************************/
