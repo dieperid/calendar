@@ -27,7 +27,9 @@
 ******************************************************************************/
 
 ///////////////////////////Déclaration des constantes/////////////////////////////
-const int INT_SIZE = 12; // Constante pour la valeur du nombre de mois
+const int INT_SIZE = 12;  	// Constante pour la valeur du nombre de mois
+const int INT_ANNEE = 1900;	// Constante pour l'addition de l'année
+const int INT_MOIs = 1;    	// Constante pour l'addition du mois
 
 ///////////////////////////Déclaration des variables//////////////////////////////
 int tab_intJourMois[]={0,31,28,31,30,31,30,31,31,30,31,30,31}; 	// Tableau possédant le nombre de jours par mois
