@@ -29,7 +29,7 @@
 ///////////////////////////Déclaration des constantes/////////////////////////////
 const int INT_SIZE = 12;  	// Constante pour la valeur du nombre de mois
 const int INT_ANNEE = 1900;	// Constante pour l'addition de l'année
-const int INT_MOIs = 1;    	// Constante pour l'addition du mois
+const int INT_MOIS = 1;    	// Constante pour l'addition du mois
 
 ///////////////////////////Déclaration des variables//////////////////////////////
 int tab_intJourMois[]={0,31,28,31,30,31,30,31,31,30,31,30,31}; 	// Tableau possédant le nombre de jours par mois
@@ -302,10 +302,10 @@ int main(void)
 		
 		// intAnnee prend la valeur de l'année actuelle
 		// tm_year renvoie le nombre d'année depuis 1900 donc on ajoute 1900 pour arriver à l'année actuelle
-		intAnnee = tm.tm_year + 1900;
+		intAnnee = tm.tm_year + INT_ANNEE;
 		// intChoix prend la valeur du mois actuel
 		// tm_mon renvoie les mois de 0 à 11 donc on fait + 1 pour le mois actuel
-		intChoix = tm.tm_mon + 1;
+		intChoix = tm.tm_mon + INT_MOIS;
 		// intJour2 prend la valeur du jour actuel
 		intJour2 = tm.tm_mday;
 		// intCodeJour prend la valeur retournée par la méthode determineCodeJour(intAnnee)
