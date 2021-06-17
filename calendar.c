@@ -227,7 +227,7 @@ void calendar(int intAnnee, int intCodeJour, int intChoixMois, int intJourActuel
 					// Sinon :
 					else
 					{
-						// On met le background color en blanc et le texte en noir pour le jour actuel du mois et on rajoute un décalage de 2
+						// On met le background color en blanc et le texte en noir pour le jour actuel du mois et on rajoute un décalage
 						printf("\033[30m\033[47m");
 						printf("%2d", intJour);
 						// On reset tout à default
