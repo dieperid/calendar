@@ -1,7 +1,7 @@
-# calendar
-C program to show a calendar on the linux terminal  
-> The "myNotes.md" file it's the documentation i took when i was learning C.  
-> The file is in french.
+# Calendar
+It's a C program to show a calendar on the linux terminal  
+> The "myNotes.md" file is the documentation i took when i was learning C.  
+> The file and the commentary in the C program are in french.
 
 ## How to use it
 You need to have the file "calendar" it's the binary of the C file.  

@@ -117,14 +117,14 @@ int choixMois(void)
 	return intChoixMois;
 }
 
-/*************************************************************
-** ------------------------ METHODE ----------------------- **
-** <Résume>                                                 **
-**  Cette méthode est utilisée pour avoir le numéro du      **
-**  premier jour de l'année et afficher la date à la        **
-**  bonne position dans le calendrier.                      **
-** <Résumé>                                                 **
-** <Paramètre> "intAnnee" <Paramètre>                       **
+/***********************************************************
+** ----------------------- METHODE ---------------------- **
+** <Résume>                                               **
+**  Cette méthode est utilisée pour avoir le numéro du    **
+**  premier jour de l'année et afficher la date à la      **
+**  bonne position dans le calendrier.                    **
+** <Résumé>                                               **
+** <Paramètre> "intAnnee" <Paramètre>                     **
 *************************************************************/
 int determineCodeJour(int intAnnee)
 {
@@ -167,17 +167,17 @@ int determineCodeAnnee(int intAnnee)
 	}
 }
 
-/*********************************************************
-** ---------------------- METHODE --------------------- **
-** <Résume>                                             **
-**  Cette méthode sert à determiner si c'est une année  **
-**  bissextile.                                         **
-** <Résumé>                                             **
-** <Paramètre> "intAnnee"      <Paramètre>              **
-** <Paramètre> "intCodeJour"   <Paramètre>              **
-** <Paramètre> "intChoixMois"  <Paramètre>              **
-** <Paramètre> "intJourActuel" <Paramètre>              **
-*********************************************************/
+/***********************************************************
+** ----------------------- METHODE ---------------------- **
+** <Résume>                                               **
+**  Cette méthode sert à determiner si c'est une année    **
+**  bissextile.                                           **
+** <Résumé>                                               **
+** <Paramètre> "intAnnee"      <Paramètre>                **
+** <Paramètre> "intCodeJour"   <Paramètre>                **
+** <Paramètre> "intChoixMois"  <Paramètre>                **
+** <Paramètre> "intJourActuel" <Paramètre>                **
+***********************************************************/
 void calendar(int intAnnee, int intCodeJour, int intChoixMois, int intJourActuel)
 {
 	// Création et initialisation à 0 des variables intMois, intJour et intBool
@@ -281,16 +281,16 @@ void calendar(int intAnnee, int intCodeJour, int intChoixMois, int intJourActuel
 	printf("\n────────────────────\n");
 }
 
-/*********************************************************
-** ---------------------- METHODE --------------------- **
-** <Résume>                                             **
-**  Cette méthode sert à écrire dans une fichier texte  **
-**  les informations données.                           **
-** <Résumé>                                             **
-** <Paramètre> "intAnnee"      <Paramètre>              **
-** <Paramètre> "intChoixMois"  <Paramètre>              **
-** <Paramètre> "intJourActuel" <Paramètre>              **
-*********************************************************/
+/***********************************************************
+** ----------------------- METHODE ---------------------- **
+** <Résume>                                               **
+**  Cette méthode sert à écrire dans une fichier texte    **
+**  les informations données.                             **
+** <Résumé>                                               **
+** <Paramètre> "intAnnee"      <Paramètre>                **
+** <Paramètre> "intChoixMois"  <Paramètre>                **
+** <Paramètre> "intJourActuel" <Paramètre>                **
+***********************************************************/
 int ecrireAgenda(int intAnnee, int intChoixMois, int intJourActuel)
 {
 	// Création du tableau tab_chrVal et initialisation de ses dimensions
