@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <time.h>
-#define TRUE    1
-#define FALSE   0
 
 /******************************************************************************
 ** PROGRAMME  calendar.c                                                     **
@@ -21,19 +19,28 @@
 
 /******************************************************************************
 ** DESCRIPTION                                                               **
-**                                                                           **
-**                                                                           **
-**                                                                           **
+** Calendrier crée en C, affichable uniquement dans un terminal via une      **
+** commande. Deux options possibles, soit afficher le mois actuel, soit      **
+** choisir l'année et le mois et les afficher.                               **
+** Une fonction d'agenda est également présente, vous pouvez agender des     **
+** evénements si vous le souhaitez, ou lire votre agenda que vous avez       **
+** rempli avant.                                                             **
 ******************************************************************************/
 
 ///////////////////////////Déclaration des constantes/////////////////////////////
-const int INT_SIZE = 12;  	// Constante pour la valeur du nombre de mois
-const int INT_ANNEE = 1900;	// Constante pour l'addition de l'année
-const int INT_MOIS = 1;    	// Constante pour l'addition du mois
+#define TRUE      1   	// Constante TRUE à 1
+#define FALSE     0    	// Constane FALSE à 0
+#define INTSIZE   12   	// Constante INTSIZE à 12 pour le nombre de mois
+#define INTANNEE  1900 	// Constane INTANNEE à 1900 pour l'addition des années
+#define INTMOIS   1    	// Constante INTMOIS à 1 pour l'addition des mois
+#define INTTAILLE 60   	// Constane INTTAILLE à 60 pour la taille des tableaux
 
 ///////////////////////////Déclaration des variables//////////////////////////////
-int tab_intJourMois[]={0,31,28,31,30,31,30,31,31,30,31,30,31}; 	// Tableau possédant le nombre de jours par mois
-char *tab_chrMois[]=                                            // Tableau possédant les mois de l'année
+FILE* fopen(const char* nomDuFichier, const char* modeOuverture);	// Variable pour ouvrir le fichier
+int fclose(FILE* pointeurSurFichier);                            	// Variable pour fermer le fichier
+int fgetc(FILE* pointeurSurFichier);                             	// Variable pour écrire dans le fichier
+int tab_intJourMois[]={0,31,28,31,30,31,30,31,31,30,31,30,31};   	// Tableau possédant le nombre de jours par mois
+char *tab_chrMois[]=                                             	// Tableau possédant les mois de l'année
 {
 	" ",
 	"\n    Janvier",
@@ -80,13 +87,15 @@ int Annee(void)
 ***********************************************************/
 int choixMois(void)
 {
-	// Création de la variable intChoix et initialisation à 0
-	int intChoix = 0;
+	// Création de la variable intChoixMois et initialisation à 0
+	int intChoixMois = 0;
 
 	// Affichage des mois de l'année
-	printf("\n  Voici les mois de l'année\n");
-	printf("-----------------------------\n");
+	printf("\n┌────────────────────────────────────────┐\n");
+	printf("│       Voici les mois de l'année        │\n");
+	printf("└────────────────────────────────────────┘\n");
 
+	// Affichage des mois à choix
 	printf(" 1. Janvier\n");
 	printf(" 2. Février\n");
 	printf(" 3. Mars\n");
@@ -100,12 +109,12 @@ int choixMois(void)
 	printf("11. Novembre\n");
 	printf("12. Décembre\n");
 
-	// Demande à l'utilisateur
-	printf("\nVeuillez seléctionner un mois : ");
-	scanf("%d", &intChoix);
+	// Demande à l'utilisateur de choisir
+	printf("\nVotre choix : ");
+	scanf("%d", &intChoixMois);
 
-	// On retourne la valeur de intChoix
-	return intChoix;
+	// On retourne la valeur de intChoixMois
+	return intChoixMois;
 }
 
 /*************************************************************
@@ -164,21 +173,22 @@ int determineCodeAnnee(int intAnnee)
 **  Cette méthode sert à determiner si c'est une année  **
 **  bissextile.                                         **
 ** <Résumé>                                             **
-** <Paramètre> "intAnnee"    <Paramètre>                **
-** <Paramètre> "intCodeJour" <Paramètre>                **
-** <Paramètre> "intChoix"    <Paramètre>                **
-** <Paramètre> "intJour2"    <Paramètre>                **
+** <Paramètre> "intAnnee"      <Paramètre>              **
+** <Paramètre> "intCodeJour"   <Paramètre>              **
+** <Paramètre> "intChoixMois"  <Paramètre>              **
+** <Paramètre> "intJourActuel" <Paramètre>              **
 *********************************************************/
-void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
+void calendar(int intAnnee, int intCodeJour, int intChoixMois, int intJourActuel)
 {
 	// Création et initialisation à 0 des variables intMois, intJour et intBool
 	int intMois, intJour, intBool = 0;
 
+	printf("\n────────────────────");
 	// Boucle for pour afficher le calendrier
-	for (intMois = 1; intMois <= INT_SIZE; intMois++)
+	for (intMois = 1; intMois <= INTSIZE; intMois++)
 	{
 		// Si le compteur de mois == le mois choisi par l'utilisateur alors :
-		if(intMois == intChoix)
+		if(intMois == intChoixMois)
 		{
 			// On affiche le nom du mois et l'année
 			printf("%s %d", tab_chrMois[intMois], intAnnee);
@@ -187,7 +197,7 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 		}
 		
 		// Si le compteur de mois == le mois choisi par l'utilisateur alors :
-		if(intMois == intChoix)
+		if(intMois == intChoixMois)
 		{
 			// On corrige la position pour la première date du mois
 			for (intJour = 1; intJour <= 1 + intCodeJour * 3; intJour++)
@@ -200,10 +210,10 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 		for (intJour = 1; intJour <= tab_intJourMois[intMois]; intJour++)
 		{
 			// Si le compteur de mois == le mois choisi par l'utilisateur alors :
-			if(intMois == intChoix)
+			if(intMois == intChoixMois)
 			{
 				// Si le compteur de jour == le jour actuel du mois alors :
-				if(intJour == intJour2)
+				if(intJour == intJourActuel)
 				{
 					// Si le booléan intBool vaut 0 alors :
 					if(intBool == 0)
@@ -268,6 +278,89 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 		// On met la position pour le prochain mois
 		intCodeJour = (intCodeJour + tab_intJourMois[intMois]) % 7;
 	}
+	printf("\n────────────────────\n");
+}
+
+/*********************************************************
+** ---------------------- METHODE --------------------- **
+** <Résume>                                             **
+**  Cette méthode sert à écrire dans une fichier texte  **
+**  les informations données.                           **
+** <Résumé>                                             **
+** <Paramètre> "intAnnee"      <Paramètre>              **
+** <Paramètre> "intChoixMois"  <Paramètre>              **
+** <Paramètre> "intJourActuel" <Paramètre>              **
+*********************************************************/
+int ecrireAgenda(int intAnnee, int intChoixMois, int intJourActuel)
+{
+	// Création du tableau tab_chrVal et initialisation de ses dimensions
+	char tab_chrVal[INTTAILLE];
+
+	// Appel du fichier
+	FILE* fichier = NULL;
+
+	// Initialisation de toutes les cases du tableau à 0
+	for(int intX = 0; intX < INTTAILLE; intX++)
+	{
+		tab_chrVal[intX] = 0;
+	}
+	
+	// Demande à l'utilisateur de rentrer le jour, le mois, l'année et l'evénement pour l'agenda
+	printf("\nEntrez le jour      : ");
+	scanf("%d", &intJourActuel);
+	printf("Entrez le mois      : ");
+	scanf("%d", &intChoixMois);
+	printf("Entrez l'année      : ");
+	scanf("%d", &intAnnee);
+	printf("Entrez l'evénements : ");
+	scanf("%s", tab_chrVal);
+
+	// Ouverture du fichier texte
+	fichier = fopen("agenda.txt", "r+");
+  if (fichier != NULL)
+  {
+    // On l'écrit dans le fichier
+    fprintf(fichier, "- Votre planning le %d.%d.%d : %s\n", intJourActuel, intChoixMois, intAnnee, tab_chrVal);
+  }
+	// Fermeture du fichier texte
+	fclose(fichier);
+}
+
+/***********************************************************
+** ----------------------- METHODE ---------------------- **
+** <Résume>                                               **
+**  Cette méthode sert à afficher l'agenda de             **
+**  l'utilisateur.                                        **
+** <Résumé>                                               **
+** <Paramètre> "void" <Paramètre>                         **
+***********************************************************/
+int lireAgenda(void)
+{
+	// Création de la variable intCaractereActuel et initialisation à 0
+	int intCaractereActuel = 0;
+
+	// Appel du fichier
+	FILE* fichier = NULL;
+	
+	// Affichage du titre
+	printf("\n┌────────────────────────────────────────┐\n");
+	printf("│       Voici votre agenda rempli :      │\n");
+	printf("└────────────────────────────────────────┘\n");
+
+	// Ouverture du fichier text
+	fichier = fopen("agenda.txt", "r");
+	if (fichier != NULL)
+	{
+		// Boucle de lecture des caractères un à un
+		// On continue tant que fgetc n'a pas retourner EOF (fin de fichier)
+		for(int intX = 0; ((intCaractereActuel = fgetc(fichier)) != EOF); intX++)
+		{
+			// On écrit en console le contenu du fichier
+			printf("%c", intCaractereActuel);
+		}
+		// Fermeture du fichier texte
+		fclose(fichier);
+	}
 }
 
 /***********************************************************
@@ -280,21 +373,22 @@ void calendar(int intAnnee, int intCodeJour, int intChoix, int intJour2)
 ***********************************************************/
 int main(void)
 {
-	// Création est initialisation à 0 des variables intAnne, intCodeJour, intLeapAnnee, intChoix, intChoix2 et intJour2
-	int intAnnee, intCodeJour, intLeapAnnee, intChoix, intChoix2, intJour2 = 0;
+	// Création est initialisation à 0 des variables intAnne, intCodeJour, intLeapAnnee, intChoixMois, intChoixUtil et intJourActuel
+	int intAnnee, intCodeJour, intLeapAnnee, intChoixMois, intChoixUtil, intJourActuel = 0;
 
 	// Affichage au lancement du programme, on propose les deux possibilités
-	printf("\n       Vous avez deux possibilités :\n");
-	printf("------------------------------------------\n");
+	printf("\n┌────────────────────────────────────────┐\n");
+	printf("│      Vous avez deux possibilités :     │\n");
+	printf("└────────────────────────────────────────┘\n");
 	printf("- Afficher le mois et la date actuelle (1)\n");
 	printf("- Afficher une année et un mois choisi (2)\n");
 	// On demande la réponse de l'utilisateur
 	printf("\nVotre réponse : ");
 	// On récupère sa réponse
-	scanf("%d", &intChoix2);
+	scanf("%d", &intChoixUtil);
 
 	// Si sa réponse est 1 alors :
-	if(intChoix2 == 1)
+	if(intChoixUtil == 1)
 	{
 		// On va rechercher la date de l'ordinateur de l'utilisateur
 		time_t t = time(NULL);
@@ -302,18 +396,18 @@ int main(void)
 		
 		// intAnnee prend la valeur de l'année actuelle
 		// tm_year renvoie le nombre d'année depuis 1900 donc on ajoute 1900 pour arriver à l'année actuelle
-		intAnnee = tm.tm_year + INT_ANNEE;
-		// intChoix prend la valeur du mois actuel
+		intAnnee = tm.tm_year + INTANNEE;
+		// intChoixMois prend la valeur du mois actuel
 		// tm_mon renvoie les mois de 0 à 11 donc on fait + 1 pour le mois actuel
-		intChoix = tm.tm_mon + INT_MOIS;
-		// intJour2 prend la valeur du jour actuel
-		intJour2 = tm.tm_mday;
+		intChoixMois = tm.tm_mon + INTMOIS;
+		// intJourActuel prend la valeur du jour actuel
+		intJourActuel = tm.tm_mday;
 		// intCodeJour prend la valeur retournée par la méthode determineCodeJour(intAnnee)
 		intCodeJour = determineCodeJour(intAnnee);
 
 		// Après avoir récupérer tout ça, on appelle les différentes méthodes pour afficher le calendrier
 		determineCodeAnnee(intAnnee);
-		calendar(intAnnee, intCodeJour, intChoix, intJour2);
+		calendar(intAnnee, intCodeJour, intChoixMois, intJourActuel);
 		printf("\n");
 	}
 	// Sinon :
@@ -321,14 +415,58 @@ int main(void)
 	{
 		// intAnnee prend la valeur retournée par la méthode Annee()
 		intAnnee = Annee();
-		// intChoix prend la valeur retournée par la méthode choixMois()
-		intChoix = choixMois();
+		// intChoixMois prend la valeur retournée par la méthode choixMois()
+		intChoixMois = choixMois();
 		// intCodeJour prend la valeur retournée par la méthode determineCodeJour(intAnnee)
 		intCodeJour = determineCodeJour(intAnnee);
 
 		// Après avoir récupérer tout ça, on appelle les différentes méthodes pour afficher le calendrier
 		determineCodeAnnee(intAnnee);
-		calendar(intAnnee, intCodeJour, intChoix, intJour2);
+		calendar(intAnnee, intCodeJour, intChoixMois, intJourActuel);
 		printf("\n");
 	}
+	
+	// Réinitialisatio de la variable intChoixUtil à 0 pour la première question
+	intChoixUtil = 0;
+
+	// Demande à l'utilisateur si il veut agender un evénement
+	printf("┌────────────────────────────────────────┐\n");
+	printf("│   Voulez vous agender un evénements ?  │\n");
+	printf("└────────────────────────────────────────┘\n");
+	printf("- Oui (1)\n");
+	printf("- Non (2)\n");
+	// Récupération de sa réponse
+	printf("\nVotre réponse : ");
+	scanf("%d", &intChoixUtil);
+ 
+	// Si sa réponse est 1 donc oui alors :
+	if(intChoixUtil == 1)
+	{
+		// On appelle la méthode pour écrire dans l'agenda
+		ecrireAgenda(intAnnee, intChoixMois, intJourActuel);
+	}
+
+	// Réinitialisatio de la variable intChoixUtil à 0 pour la deuxième question
+	intChoixUtil = 0;
+
+	// Demande à l'utilisateur si il veut lire le contenu de son agenda
+	printf("\n\n┌────────────────────────────────────────┐\n");
+	printf("│     Voulez vous voir votre agenda ?    │\n");
+	printf("└────────────────────────────────────────┘\n");
+	printf("- Oui (1)\n");
+	printf("- Non (2)\n");
+	// Récupération de sa réponse
+	printf("\nVotre réponse : ");
+	scanf("%d", &intChoixUtil);
+
+	// Si sa réponse est 1 donc oui alors :
+	if(intChoixUtil == 1)
+	{
+		// On appelle la méthode pour lire dans l'agenda
+		lireAgenda();
+	}
+
+	// Retour à la ligne et fin du programme
+	printf("\n");
+	return 0;
 }
