@@ -25,7 +25,7 @@ Une variable globale est une variable qui est accessible dans tout les fichiers 
 int resultat()
 ```
 
-Une variable globale accessible seulement dans un fichier unique (le fichier ou est écrite la fonction). Il faut rajouter le mot "static" devant.  
+Une variable globale est accessible seulement dans un fichier unique (le fichier ou est écrite la fonction). Il faut rajouter le mot "static" devant.  
 **ATTENTION :** Si le mot "static" est rajouté à la déclaration d'une variable, elle n'aura pas le même effet qu'une variable sans le "static" devant.  
 Je m'explique, la variable static n'est pas supprimée à la fin de la fonction, c'est à dire que à chaque fois qu'on appellerala fonction, la variable aura conservé sa valeur initiale.  
 Donc si on exécute le programme une deuxième fois, il va additionner la valeur de la première exécution et de la deuxième.  
@@ -64,7 +64,7 @@ unsigned char
 
 
 
-# 3. Caractère spéciaux :
+# 3. Caractères spéciaux :
 **Faire un backslash = Alt Gr + <**  
 - \n = Retour à la ligne  
 - \t = tabulation
@@ -76,8 +76,8 @@ unsigned char
 - (==) -> est égal à  
 - (>)  -> est supérieur à  
 - (<)  -> est inférieur à  
-- (=)  ->  est supérieur ou égal à  
-- (<=) -> est inférieur ou égal  
+- (>=) -> est supérieur ou égal à  
+- (<=) -> est inférieur ou égal à
 - (!=) -> est différent de
 		
 ##	Deuxième type :
@@ -86,7 +86,7 @@ unsigned char
 - !  -> NON
 		
 ##	Troisième type :
-Les ternaires -> des conditions condensées, c'est comme un if, else mais en condensés.  
+Les ternaires -> des conditions condensées, c'est comme un if, else mais en condensé.  
 > Exemple if, else :
 ```c
 if (majeur)
@@ -149,7 +149,7 @@ for (compteur = 0 ; compteur < 10 ; compteur++) {
 
 
 #	7. Les prototypes :
-    Les prototypes servent à annoncer à l'ordinateur que la fonctions existe, c'est une indication. Une fois que l'ordinateur  
+    Les prototypes servent à annoncer à l'ordinateur que la fonction existe, c'est une indication. Une fois que l'ordinateur  
     à l'indication que la fonction existe, peut importe ou vous mettez votre fonction dans le code, l'ordinateur comprendra  
     et pourra l'exécuter. De plus comme vous pourrez le constater, la fonction main ne possède pas de prototype. C'est la  
     seule fonction qui n'en nécessite pas parce que l'ordinateur la connait.
@@ -264,7 +264,7 @@ En mettant NULL on a un pointeur initialisé, donc il ne contient aucune adresse
 	
 	
 #	11. Les chaines de caractères
-    Les chaines de caractères sont en fait des tableaux qui contiennent des caractères et non des  chiffres.
+    Les chaines de caractères sont en fait des tableaux qui contiennent des caractères et non des chiffres.
     On utilise la variable "char" pour définir que le type d'information sera des caractères.
 	
 
