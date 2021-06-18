@@ -1302,11 +1302,11 @@ int remove(const char* fichierASupprimer);
 Cette fonction tombe bien, nous avons plus besoin de notre fichier test.txt.
 > Voici le code pour supprimer le fichier :
 ```c
-int rename(const char* ancienNom, const char* nouveauNom);
+int remove(const char* fichierASupprimer);
 
 int main(int argc, char *argv[])
 {
-  rename("test_renomme.txt", "test.txt");
+  remove("test.txt");
 
   return 0;
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 /******************************************************************************
@@ -23,7 +24,7 @@
 ** commande. Deux options possibles, soit afficher le mois actuel, soit      **
 ** choisir l'année et le mois et les afficher.                               **
 ** Une fonction d'agenda est également présente, vous pouvez agender des     **
-** evénements si vous le souhaitez, ou lire votre agenda que vous avez       **
+** événements si vous le souhaitez, ou lire votre agenda que vous avez       **
 ** rempli avant.                                                             **
 ******************************************************************************/
 
@@ -36,9 +37,10 @@
 #define INTTAILLE 60   	// Constane INTTAILLE à 60 pour la taille des tableaux
 
 ///////////////////////////Déclaration des variables//////////////////////////////
-FILE* fopen(const char* nomDuFichier, const char* modeOuverture);	// Variable pour ouvrir le fichier
-int fclose(FILE* pointeurSurFichier);                            	// Variable pour fermer le fichier
-int fgetc(FILE* pointeurSurFichier);                             	// Variable pour écrire dans le fichier
+FILE* fopen(const char* nomDuFichier, const char* modeOuverture);	// Variable pour ouvrir le fichier texte
+int fclose(FILE* pointeurSurFichier);                            	// Variable pour fermer le fichier texte
+int fgetc(FILE* pointeurSurFichier);                             	// Variable pour écrire dans le fichier texte
+int remove(const char* fichierASupprimer);                       	// Variable pour supprimer le fichier texte
 int tab_intJourMois[]={0,31,28,31,30,31,30,31,31,30,31,30,31};   	// Tableau possédant le nombre de jours par mois
 char *tab_chrMois[]=                                             	// Tableau possédant les mois de l'année
 {
@@ -287,42 +289,37 @@ void calendar(int intAnnee, int intCodeJour, int intChoixMois, int intJourActuel
 **  Cette méthode sert à écrire dans une fichier texte    **
 **  les informations données.                             **
 ** <Résumé>                                               **
-** <Paramètre> "intAnnee"      <Paramètre>                **
-** <Paramètre> "intChoixMois"  <Paramètre>                **
-** <Paramètre> "intJourActuel" <Paramètre>                **
+** <Paramètre> "void" <Paramètre>                         **
 ***********************************************************/
-int ecrireAgenda(int intAnnee, int intChoixMois, int intJourActuel)
+int ecrireAgenda(void)
 {
-	// Création du tableau tab_chrVal et initialisation de ses dimensions
+	// Création d'un tableau pour le contenu du fichier initialisé à 60 en taille
 	char tab_chrVal[INTTAILLE];
 
 	// Appel du fichier
-	FILE* fichier = NULL;
+	FILE * fichier = NULL;
 
-	// Initialisation de toutes les cases du tableau à 0
-	for(int intX = 0; intX < INTTAILLE; intX++)
+	// Ouverture du fichier en mode écriture, si il n'existe pas on le crée
+	fichier = fopen("agenda.txt", "w");
+
+	// Si le fichier retourne NULL c'est que le fichier n'a pas été crée
+	if(fichier == NULL)
 	{
-		tab_chrVal[intX] = 0;
+		// Si le fichier n'existe pas on met un message d'erreur et on ferme le programme
+		printf("Pas d'acès pour crée le fichier.\n");
+		exit(EXIT_FAILURE);
 	}
-	
-	// Demande à l'utilisateur de rentrer le jour, le mois, l'année et l'evénement pour l'agenda
-	printf("\nEntrez le jour      : ");
-	scanf("%d", &intJourActuel);
-	printf("Entrez le mois      : ");
-	scanf("%d", &intChoixMois);
-	printf("Entrez l'année      : ");
-	scanf("%d", &intAnnee);
-	printf("Entrez l'evénements : ");
-	scanf("%s", tab_chrVal);
 
-	// Ouverture du fichier texte
-	fichier = fopen("agenda.txt", "r+");
-  if (fichier != NULL)
-  {
-    // On l'écrit dans le fichier
-    fprintf(fichier, "- Votre planning le %d.%d.%d : %s\n", intJourActuel, intChoixMois, intAnnee, tab_chrVal);
-  }
-	// Fermeture du fichier texte
+	// Demande à l'utilisateur d'écrire son événement
+	fgets(tab_chrVal, INTTAILLE, stdin);
+	printf("\nEntrez l'événement -> format (00.0.0000 : événement ) : ");
+	// On écrit dans le tableau de que l'utilisateur à écrit
+	fgets(tab_chrVal, INTTAILLE, stdin);
+
+	// On écrit le contenu dans le fichier
+	fputs(tab_chrVal, fichier);
+
+	// On ferme le fichier
 	fclose(fichier);
 }
 
@@ -429,9 +426,9 @@ int main(void)
 	// Réinitialisatio de la variable intChoixUtil à 0 pour la première question
 	intChoixUtil = 0;
 
-	// Demande à l'utilisateur si il veut agender un evénement
+	// Demande à l'utilisateur si il veut agender un événement
 	printf("┌────────────────────────────────────────┐\n");
-	printf("│   Voulez vous agender un evénements ?  │\n");
+	printf("│   Voulez vous agender un événements ?  │\n");
 	printf("└────────────────────────────────────────┘\n");
 	printf("- Oui (1)\n");
 	printf("- Non (2)\n");
@@ -443,7 +440,7 @@ int main(void)
 	if(intChoixUtil == 1)
 	{
 		// On appelle la méthode pour écrire dans l'agenda
-		ecrireAgenda(intAnnee, intChoixMois, intJourActuel);
+		ecrireAgenda();
 	}
 
 	// Réinitialisatio de la variable intChoixUtil à 0 pour la deuxième question
