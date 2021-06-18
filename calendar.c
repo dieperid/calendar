@@ -127,7 +127,7 @@ int choixMois(void)
 **  bonne position dans le calendrier.                    **
 ** <Résumé>                                               **
 ** <Paramètre> "intAnnee" <Paramètre>                     **
-*************************************************************/
+***********************************************************/
 int determineCodeJour(int intAnnee)
 {
 	// Création est initialisation à des variables intCodeJour, intD1, intD2, intD3
