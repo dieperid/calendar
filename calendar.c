@@ -312,7 +312,7 @@ int ecrireAgenda(void)
 
 	// Demande à l'utilisateur d'écrire son événement
 	fgets(tab_chrVal, INTTAILLE, stdin);
-	printf("\nEntrez l'événement -> format (00.0.0000 : événement ) : ");
+	printf("\nEntrez l'événement -> Format (00.00.0000 : Evénement ) : ");
 	// On écrit dans le tableau de que l'utilisateur à écrit
 	fgets(tab_chrVal, INTTAILLE, stdin);
 
