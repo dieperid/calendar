@@ -306,7 +306,7 @@ int ecrireAgenda(void)
 	if(fichier == NULL)
 	{
 		// Si le fichier n'existe pas on met un message d'erreur et on ferme le programme
-		printf("Pas d'acès pour crée le fichier.\n");
+		printf("Pas d'accès pour crée le fichier.\n");
 		exit(EXIT_FAILURE);
 	}
 
