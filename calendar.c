@@ -428,7 +428,7 @@ int main(void)
 
 	// Demande à l'utilisateur si il veut agender un événement
 	printf("┌────────────────────────────────────────┐\n");
-	printf("│   Voulez vous agender un événements ?  │\n");
+	printf("│   Voulez vous agender un événement ?   │\n");
 	printf("└────────────────────────────────────────┘\n");
 	printf("- Oui (1)\n");
 	printf("- Non (2)\n");
